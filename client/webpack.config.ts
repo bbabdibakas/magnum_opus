@@ -6,7 +6,7 @@ import type { Configuration as DevServerConfiguration } from "webpack-dev-server
 const config: webpack.Configuration = {
     mode: 'development',
     devtool: 'inline-source-map',
-    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].[contenthash:8].js',
