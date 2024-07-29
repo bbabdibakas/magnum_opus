@@ -1,6 +1,7 @@
 import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
 
 const config: webpack.Configuration = {
     mode: 'development',
@@ -29,6 +30,10 @@ const config: webpack.Configuration = {
         }),
         new webpack.ProgressPlugin()
     ],
+    devServer: {
+        port: 3000,
+        open: true
+    }
 };
 
 export default config

@@ -1,5 +1,3 @@
-const testFunc = (): string => {
-    return 'Hello, World!'
-}
+const root = document.getElementById('root')
 
-console.log(testFunc());
+root.innerHTML = '<div>Hello, World!</div>'
