@@ -1,0 +1,36 @@
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.AppInput {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 20px 10px 10px;
+    background: none;
+    outline: none;
+    border: 1px solid var(--border-color);
+    font: var(--font-l);
+    color: var(--primary-color);
+    
+    &:focus {
+        border-color: var(--highlight-color);
+    }
+}
+
+.placeholder {
+    pointer-events: none;
+    position: absolute;
+    left: 10px;
+    top: var(--font-size-l);
+    font: var(--font-l);
+    color: var(--border-color);
+
+    &.focused {
+        top: 5px;
+        color: var(--highlight-color);
+        font: var(--font-m);
+    }
+}

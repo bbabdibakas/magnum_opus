@@ -2,7 +2,7 @@ import { AppButton, AppButtonTheme } from "shared/ui/AppButton/AppButton"
 import { Navbar } from "widgets/Navbar"
 import cls from './MainPage.module.scss'
 import { useState } from "react"
-import { AppModal } from "shared/ui/AppModal/AppModal"
+import { AuthModal } from "features/authByUsername"
 
 const MainPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -27,14 +27,7 @@ const MainPage = () => {
                 </AppButton>
             </Navbar>
             MainPage
-            {isModalOpen && (
-                <AppModal
-                    isModalOpen={isModalOpen}
-                    onClose={onModalClose}
-                >
-                    Hello, World!
-                </AppModal>
-            )}
+            {isModalOpen && <AuthModal isModalOpen={isModalOpen} onClose={onModalClose} />}
         </div>
     )
 }

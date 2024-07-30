@@ -63,6 +63,9 @@ export default (env: IEnv) => {
             }),
             new webpack.ProgressPlugin(),
             new MiniCssExtractPlugin(),
+            new webpack.DefinePlugin({
+                __IS_DEV__: JSON.stringify(isDev),
+            }),
         ],
         devServer: isDev ? {
             port: 3000,
