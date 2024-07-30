@@ -1,0 +1,17 @@
+{
+    "users": [
+        {
+            "id": "1",
+            "username": "babdibakas",
+            "password": "12345"
+        }
+    ],
+    "profiles": [
+        {
+            "id": "1",
+            "username": "babdibakas",
+            "name": "Bekzat Abdibakas",
+            "bio": "some bio info.."
+        }
+    ]
+}

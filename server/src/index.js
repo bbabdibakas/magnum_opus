@@ -8,6 +8,12 @@ const app = express();
 app.use(cors()); // Enable CORS for all routes
 app.use(express.json()); // For parsing application/json
 
+app.use((req, res, next) => {
+    setTimeout(() => {
+        next();
+    }, 800)
+});
+
 app.use('/auth', authRoutes);
 
 app.listen(config.port, () => {
