@@ -47,6 +47,10 @@ export default (env: IEnv) => {
         },
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
+            modules: [path.resolve(__dirname, "src"), "node_modules"],
+            preferAbsolute: true,
+            mainFiles: ['index'],
+            alias: {}
         },
         plugins: [
             new HtmlWebpackPlugin({
@@ -57,7 +61,8 @@ export default (env: IEnv) => {
         ],
         devServer: isDev ? {
             port: 3000,
-            open: true
+            open: true,
+            historyApiFallback: true
         } : undefined,
         devtool: isDev ? 'inline-source-map' : undefined,
     };

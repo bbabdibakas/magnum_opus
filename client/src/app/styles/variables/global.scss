@@ -1,0 +1,15 @@
+:root {
+    --font-family: sans-serif;
+    --font-size-m: 12px;
+    --font-line-m: 20px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family);
+    --font-size-l: 16px;
+    --font-line-l: 24px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family);
+
+    /*colors*/
+
+    --app-bg-color: #000;
+    --primary-color: #fff;
+    --border-color: #181818;
+}
