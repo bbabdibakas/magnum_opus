@@ -1,10 +1,14 @@
+import { AppButton, AppButtonTheme } from "shared/ui/AppButton/AppButton"
 import { Navbar } from "widgets/Navbar"
+import cls from './MainPage.module.scss'
 
 const MainPage = () => {
     return (
         <div>
             <Navbar>
-                Login
+                <AppButton theme={AppButtonTheme.PRIMARY} className={cls.button}>
+                    Login
+                </AppButton>
             </Navbar>
             MainPage
         </div>

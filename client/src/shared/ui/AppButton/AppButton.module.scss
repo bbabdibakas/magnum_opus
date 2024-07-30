@@ -1,0 +1,20 @@
+.AppButton {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clear {
+    color: var(--primary-color);
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.primary {
+    border: none;
+    background: var(--highlight-color);
+    outline: none;
+    color: #fff;
+}
