@@ -1,4 +1,3 @@
-import "./App.css"
 import { Link, Route, Routes } from "react-router-dom"
 import MainPage from "../pages/MainPage"
 import ProfilePage from "../pages/ProfilePage"
