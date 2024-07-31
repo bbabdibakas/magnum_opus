@@ -11,6 +11,7 @@ const login = async (req, res) => {
     try {
         const data = fs.readFileSync(path.join(__dirname, '../db/db.json'), 'utf-8')
         const users = JSON.parse(data).users;
+        const profiles = JSON.parse(data).profiles;
 
         const user = users.find(u => u.username === username);
         if (!user) {
@@ -21,7 +22,12 @@ const login = async (req, res) => {
             return res.status(401).json({ error: 'Invalid credentials' });
         }
 
-        res.status(200).json({ id: user.id, username: user.username });
+        const profile = profiles.find(u => u.userId === user.id);
+        if (!profile) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        res.status(200).json({ id: user.id, username: user.username, profileId: profile.id });
     } catch (err) {
         console.error(err)
         res.status(500).json({ error: 'Internal server error' });

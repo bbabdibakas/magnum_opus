@@ -1,0 +1,17 @@
+.ProfileDetails {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.isLoading, 
+.errorMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+
+
+.bio {
+    margin-top: 10px;
+}

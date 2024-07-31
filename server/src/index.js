@@ -2,6 +2,7 @@ const config = require('./config/config');
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
+const profileRoutes = require('./routes/profileRoutes');
 
 const app = express();
 
@@ -15,6 +16,15 @@ app.use((req, res, next) => {
 });
 
 app.use('/auth', authRoutes);
+
+app.use((req, res, next) => {
+    if (!req.headers.authorization) {
+        return res.status(403).json({ error: 'Not authorized' });
+    } 
+    next()
+});
+
+app.use('/profiles', profileRoutes);
 
 app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);

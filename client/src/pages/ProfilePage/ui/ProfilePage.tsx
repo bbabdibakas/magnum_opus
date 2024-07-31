@@ -1,7 +1,9 @@
+import { ProfileDetails } from "entities/Profile"
+
 const ProfilePage = () => {
     return (
         <div>
-            ProfilePage
+            <ProfileDetails id={'1'} />
         </div>
     )
 }
