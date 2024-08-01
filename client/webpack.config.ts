@@ -18,7 +18,8 @@ export default (env: IEnv) => {
         output: {
             path: path.resolve(__dirname, 'dist'),
             filename: '[name].[contenthash:8].js',
-            clean: true
+            clean: true,
+            publicPath: '/'
         },
         module: {
             rules: [

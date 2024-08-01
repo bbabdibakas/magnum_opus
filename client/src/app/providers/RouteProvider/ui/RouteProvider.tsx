@@ -1,25 +1,34 @@
 import { Routes, Route } from "react-router-dom"
-import { routeConfig } from "../lib/routeConfig"
+import { AppRouterProps, routeConfig } from "../lib/routeConfig"
 import { Suspense } from "react"
+import { RequireAuth } from "./RequireAuth"
 
 const RouteProvider = () => {
+    const renderWithWrapper = (route: AppRouterProps) => {
+		const element = (
+			<Suspense fallback={'Loading..'}>
+				<div className="content">
+					{route.element}
+				</div>
+			</Suspense>
+		)
+
+		return (
+			<Route
+				path={route.path}
+				key={route.path}
+				element={route.isRequiredAuth ? <RequireAuth>{element}</RequireAuth> : element}
+			/>
+		)
+	}
+
     return (
-        <div className="content">
-            <Suspense fallback={'Loading...'}>
-                <Routes>
-                    {
-                        Object.values(routeConfig).map(({ path, element }) => (
-                            <Route
-                                path={path}
-                                key={path}
-                                element={element}
-                            />
-                        ))
-                    }
-                </Routes>
-            </Suspense>
-        </div>
-    )
+		<Routes>
+			{
+				Object.values(routeConfig).map(renderWithWrapper)
+			}
+		</Routes>
+	)
 }
 
 export default RouteProvider
