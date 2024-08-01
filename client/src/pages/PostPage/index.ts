@@ -1,5 +1,5 @@
-import PostPage from "./ui/PostPage";
+import { PostPageAsync } from "./ui/PostPage.async";
 
 export {
-    PostPage
+    PostPageAsync as PostPage
 }
