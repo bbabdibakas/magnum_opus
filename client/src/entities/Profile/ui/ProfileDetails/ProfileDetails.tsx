@@ -6,6 +6,8 @@ import { fetchProfileData } from "../../model/services/fetchProfileData"
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData"
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading"
 import { getAuthFormErrorMessage } from "../../model/selectors/getAuthFormErrorMessage/getAuthFormErrorMessage"
+import { getUserData } from 'entities/User'
+import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton'
 
 interface ProfileDetailsProps {
     id: string
@@ -20,6 +22,7 @@ export const ProfileDetails = (props: ProfileDetailsProps) => {
 
     const dispatch = useDispatch()
 
+    const userData = useSelector(getUserData)
     const profileData = useSelector(getProfileData)
     const isLoading = useSelector(getProfileIsLoading)
     const errorMessage = useSelector(getAuthFormErrorMessage)
@@ -43,17 +46,38 @@ export const ProfileDetails = (props: ProfileDetailsProps) => {
                 errorMessage
             </div>
         )
+    } else if (userData && userData?.profileId === id) {
+        content = (
+            <div className={classNames(cls.ProfileDetails, [className])}>
+                <div>
+                    <div className={cls.name}>
+                        {profileData?.name}
+                    </div>
+                    <div className={cls.username}>
+                        {profileData?.username}
+                    </div>
+                    <div className={cls.bio}>
+                        {profileData?.bio}
+                    </div>
+                </div>
+                <AppButton theme={AppButtonTheme.OUTLINED} className={cls.button}>
+                    Edit profile
+                </AppButton>
+            </div>
+        )
     } else {
         content = (
             <div className={classNames(cls.ProfileDetails, [className])}>
-                <div className={cls.name}>
-                    {profileData?.name}
-                </div>
-                <div className={cls.username}>
-                    {profileData?.username}
-                </div>
-                <div className={cls.bio}>
-                    {profileData?.bio}
+                <div>
+                    <div className={cls.name}>
+                        {profileData?.name}
+                    </div>
+                    <div className={cls.username}>
+                        {profileData?.username}
+                    </div>
+                    <div className={cls.bio}>
+                        {profileData?.bio}
+                    </div>
                 </div>
             </div>
         )

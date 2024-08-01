@@ -1,4 +1,7 @@
 .ProfileDetails {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     padding: 10px;
     border-bottom: 1px solid var(--border-color);
 }
@@ -11,7 +14,12 @@
     min-height: 300px;
 }
 
-
 .bio {
     margin-top: 10px;
+}
+
+.button {
+    font: var(--font-l);
+    padding: 5px 10px;
+    border-radius: 5px;
 }

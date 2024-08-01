@@ -2,6 +2,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    outline: none;
     justify-content: center;
 }
 
@@ -9,12 +10,21 @@
     color: var(--primary-color);
     border: none;
     background: none;
-    outline: none;
 }
 
 .primary {
     border: none;
     background: var(--highlight-color);
-    outline: none;
-    color: #fff;
+    color: var(--primary-color);
+}
+
+.outlined {
+    border: 1px solid var(--border-color);
+    background: none;
+    color: var(--primary-color);
+
+    &:hover {
+        border-color: var(--primary-color);
+        background: var(--hover-color);
+    }
 }

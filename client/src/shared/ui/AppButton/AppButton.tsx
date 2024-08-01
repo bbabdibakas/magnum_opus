@@ -4,7 +4,8 @@ import { ButtonHTMLAttributes, ReactNode } from 'react'
 
 export enum AppButtonTheme {
     PRIMARY = 'primary',
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    OUTLINED = 'outlined'
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
