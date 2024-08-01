@@ -1,0 +1,17 @@
+.AppTextArea {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 5px;
+    padding: 20px 10px 10px;
+    background: none;
+    outline: none;
+    resize: none;
+    border: 1px solid var(--border-color);
+    font: var(--font-l);
+    color: var(--primary-color);
+    overflow: hidden;
+
+    &:focus {
+        border-color: var(--highlight-color);
+    }
+}

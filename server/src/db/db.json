@@ -1,25 +1,45 @@
 {
-    "users": [
-        {
-            "id": "user1",
-            "username": "babdibakas",
-            "password": "12345"
-        }
-    ],
-    "profiles": [
-        {
-            "id": "1",
-            "userId": "user1",
-            "username": "babdibakas",
-            "name": "Bekzat Abdibakas",
-            "bio": "some bio info.."
-        }
-    ],
-    "posts": [
-        {
-            "id": "1",
-            "content": "Hello, World",
-            "profileId": "1"
-        }
-    ]
+  "users": [
+    {
+      "id": "user1",
+      "username": "babdibakas",
+      "password": "12345"
+    }
+  ],
+  "profiles": [
+    {
+      "id": "1",
+      "userId": "user1",
+      "username": "babdibakas",
+      "name": "Bekzat Abdibakas",
+      "bio": "some bio info.."
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "content": "Hello, World",
+      "profileId": "1"
+    },
+    {
+      "id": "s1pm90f8p28",
+      "content": "asdnaklsdnksad",
+      "profileId": "1"
+    },
+    {
+      "id": "ch1zu96irmd",
+      "content": "Hello a;sldsal;dmsal;dmsa;ldmsa;ldmsal;dmsa;ldmsal;dmsa;ldmsal;dmsal;mdsal;dmsaldms;lamdl;asmdl;smadl;samdl;asmdsal;dml;asdmsal;mdl;asmdl;asdmsa;ldmsal;dmla;smd",
+      "profileId": "1"
+    },
+    {
+      "id": "mf9ppunibhm",
+      "content": "\"asd\"",
+      "profileId": "1"
+    },
+    {
+      "id": "guaflctd49",
+      "content": "Hello world amigos",
+      "profileId": "1"
+    }
+  ]
 }
