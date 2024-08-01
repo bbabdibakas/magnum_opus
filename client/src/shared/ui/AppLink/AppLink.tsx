@@ -18,20 +18,11 @@ export const AppLink = (props: AppLinkProps) => {
         ...otherProps
     } = props
 
-    const [isClicked, setIsClicked] = useState(false);
-
-    const onClickHandler = () => {
-        if (animationClassName) {
-            setIsClicked(true);
-        }
-        setTimeout(() => setIsClicked(false), 1000);
-    };
 
     return (
         <Link
             to={to}
-            onClick={onClickHandler}
-            className={classNames(cls.AppLink, [className], { [animationClassName]: isClicked })}
+            className={classNames(cls.AppLink, [className])}
             {...otherProps}
         >
             {children}
