@@ -3,12 +3,14 @@ import { authFormReducer } from 'features/authByUsername'
 import { RootState } from './RootState'
 import { userReducer } from 'entities/User'
 import { profileReducer } from 'entities/Profile'
+import { postReducer } from 'entities/Post'
 
 export const createReduxStore = (initialState?: RootState) => {
     const rootReducer: ReducersMapObject<RootState> = {
         user: userReducer,
         authForm: authFormReducer,
-        profile: profileReducer
+        profile: profileReducer,
+        post: postReducer
     }
 
     const store = configureStore({

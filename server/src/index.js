@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');
 const profileRoutes = require('./routes/profileRoutes');
+const postRouter = require('./routes/postRoutes');
 
 const app = express();
 
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/profiles', profileRoutes);
+app.use('/posts', postRouter);
 
 app.listen(config.port, () => {
     console.log(`Server running on port ${config.port}`);

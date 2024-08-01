@@ -5,9 +5,9 @@ import { classNames } from "shared/lib/classNames/classNames"
 import { fetchProfileData } from "../../model/services/fetchProfileData"
 import { getProfileData } from "../../model/selectors/getProfileData/getProfileData"
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading"
-import { getAuthFormErrorMessage } from "../../model/selectors/getAuthFormErrorMessage/getAuthFormErrorMessage"
 import { getUserData } from 'entities/User'
 import { AppButton, AppButtonTheme } from 'shared/ui/AppButton/AppButton'
+import { getProfileErrorMessage } from '../../model/selectors/getProfileErrorMessage/getProfileErrorMessage'
 
 interface ProfileDetailsProps {
     id: string
@@ -25,7 +25,7 @@ export const ProfileDetails = (props: ProfileDetailsProps) => {
     const userData = useSelector(getUserData)
     const profileData = useSelector(getProfileData)
     const isLoading = useSelector(getProfileIsLoading)
-    const errorMessage = useSelector(getAuthFormErrorMessage)
+    const errorMessage = useSelector(getProfileErrorMessage)
 
     useEffect(() => {
         //@ts-ignore

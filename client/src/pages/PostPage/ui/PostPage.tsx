@@ -1,7 +1,9 @@
+import { PostDetails } from "entities/Post"
+
 const PostPage = () => {
     return (
         <div>
-            PostPage
+            <PostDetails id={'1'} />
         </div>
     )
 }
